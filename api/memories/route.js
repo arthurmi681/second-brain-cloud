@@ -5,11 +5,10 @@
  * 1. Recebe mensagem do usuário
  * 2. Cria embedding da mensagem
  * 3. Busca memórias similares no banco
- * 4. Envia para OpenAI com contexto
+ * 4. Envia para Groq com contexto
  * 5. Salva nova memória se importante
  */
-import { searchMemories, saveMemoryIfImportant } from '../../lib/embeddings';
-import { openai } from '../../lib/openai';
+import { searchMemories, saveMemoryIfImportant, getChatCompletion } from '../../lib/embeddings';
 import { MEMORY_SYSTEM_PROMPT } from '../../lib/prompts';
 
 export const dynamic = 'force-dynamic';
@@ -31,20 +30,13 @@ export async function POST(request) {
     // 2. Preparar prompt com contexto
     const systemPrompt = MEMORY_SYSTEM_PROMPT(memories);
     
-    // 3. Chamar OpenAI
-    const completion = await openai.chat.completions.create({
-      model: 'gpt-4o-mini',
-      messages: [
-        { role: 'system', content: systemPrompt },
-        { role: 'user', content: message }
-      ],
-      temperature: 0.7,
-      max_tokens: 1000
-    });
+    // 3. Chamar Groq (Llama)
+    const response = await getChatCompletion([
+      { role: 'system', content: systemPrompt },
+      { role: 'user', content: message }
+    ]);
     
-    const response = completion.choices[0].message.content;
-    
-    // 4. Salvar nova memória (se.enabled e for importante)
+    // 4. Salvar nova memória (se_ENABLED e for importante)
     if (saveMemory && message.length > 20) {
       await saveMemoryIfImportant(message);
     }
@@ -74,7 +66,7 @@ export async function POST(request) {
 export async function GET() {
   try {
     const { supabase } = await import('../../lib/supabase');
-    
+
     const { data, error } = await supabase
       .from('memories')
       .select('id, content, category, importance, created_at')
