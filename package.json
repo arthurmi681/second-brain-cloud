@@ -4,10 +4,8 @@
   "description": "OmniMind Second Brain - Cloud Native (Supabase + Vercel + Groq)",
   "main": "api/memories/route.js",
   "scripts": {
-    "dev": "vercel dev",
     "start": "vercel start",
-    "build": "vercel build",
-    "deploy": "vercel --prod"
+    "dev": "vercel dev"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.39.0",
