@@ -4,33 +4,38 @@
 
 ### 1. CLONE DO GITHUB
 ```bash
-git clone https://github.com/arthurmi681/second-brain-cloud.git /mnt/hdd/zaki
+git clone https://github.com/arthurmi681/omnimind-brain.git /mnt/hdd/zaki
 ```
+→ **TODO** o código + segundo cérebro + memórias
 
-### 2. CARREGA MEMÓRIAS DO CLOUD
+### 2. CARREGA MEMÓRIAS DO SECOND-BRAIN
 ```bash
-curl https://second-brain-cloud.vercel.app/api/memories
+# Ler arquivos do segundo cérebro em:
+/mnt/hdd/zaki/second-brain/_memory/
+/mnt/hdd/zaki/omni-claim/_memory/
 ```
-→ Tudo que foi salvo na sessão anterior está aqui!
+→ Todo o contexto do Zaki está aqui!
 
-### 3. VERIFICA SUPABASE
-→ Conexão automática via variáveis de ambiente
+### 3. VERIFICA SUPABASE (opcional - para app mobile)
+- second-brain-cloud: https://second-brain-cloud.vercel.app
+- API: /api/memories
 
 ---
 
 ## 🎯 NA SESSÃO
 
 - Trabalha em `/mnt/hdd/zaki/`
-- Tudo importante → salva no Supabase (cloud)
-- Código → push para GitHub
+- **Código importante** → GitHub (omnimind-brain)
+- **Memórias** → segundo cérebro local + GitHub
+- **App Mobile** → Supabase (second-brain-cloud)
 
 ---
 
 ## 🔚 FINAL DA SESSÃO
 
 ```bash
-# 1. Push código
-cd /mnt/hdd/zaki/second-brain-cloud
+# 1. Push código e cérebro
+cd /mnt/hdd/zaki
 git add . && git commit -m "Descrição" && git push
 
 # 2. Limpar local (opcional)
@@ -43,16 +48,15 @@ rm -rf /mnt/hdd/zaki/*
 
 | Passo | Ação |
 |-------|------|
-| Início | `git clone` |
-| Durante | Trabalhar + salvar no cloud |
+| Início | `git clone omnimind-brain` |
+| Durante | Trabalhar + salvar no cérebro |
 | Fim | `git push` + limpar |
 
 ---
 
 ## 🎓 LEMBRETE
 
-> **Cloud = BASE**
-> **Local = temporário**
+> **GitHub = BASE principal**
+> **Supabase = só para app mobile**
 
-Cada sessão começa do zero (clone) e termina com push.
-Nenhuma perda de dados — tudo está no cloud!
+Cada sessão começa do clone e termina com push!
