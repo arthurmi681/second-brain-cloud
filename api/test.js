@@ -1,8 +1,8 @@
-export default function handler(req) {
+export const runtime = 'edge';
+
+export async function GET() {
   return Response.json({ 
     message: 'OK!',
     timestamp: new Date().toISOString()
   });
 }
-
-export const dynamic = 'force-dynamic';
