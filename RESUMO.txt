@@ -7,109 +7,84 @@
 
 ### 1. Repositório GitHub
 - **URL:** https://github.com/arthurmi681/second-brain-cloud
-- **Status:** ✅ Online e sincronizado
+- **Status:** ✅ Online
 
-### 2. Banco de Dados (Supabase)
+### 2. Supabase (App Mobile)
 - **Project Ref:** qrjggvkgwrjjfatbscat
 - **URL:** https://qrjggvkgwrjjfatbscat.supabase.co
-- **Tabelas criadas:**
-  - `memories` —Armazena todas as memórias
-  - `sessions` — Sessions de conversa
-  - `user_config` — Configurações do usuário
+- **Tabelas:** memories, sessions, user_config
 
-### 3. Servidor (Vercel)
+### 3. Vercel (API)
 - **URL:** https://second-brain-cloud.vercel.app
-- **Status:** ✅ Online e funcionando
-- **Deploy:** Automático via GitHub
+- **Status:** ✅ Online
 
 ---
 
 ## 🌐 APIs DISPONÍVEIS
 
 ### GET /api/memories
-Lista todas as memórias salvas
+Lista memórias
 
-```bash
-curl https://second-brain-cloud.vercel.app/api/memories
-```
-
-### POST /api/memories
-Salva uma nova memória
-
+### POST /api/memories  
+Salva memória
 ```bash
 curl -X POST https://second-brain-cloud.vercel.app/api/memories \
   -H "Content-Type: application/json" \
-  -d '{"message":"Sua mensagem aqui", "category":"general"}'
+  -d '{"message":" texto", "category":"general"}'
 ```
 
 ---
 
-## 🔑 VARIÁVEIS CONFIGURADAS
+## 🍎 ARQUITETURA COMPLETA
 
-| Variável | Valor |
-|----------|-------|
-| SUPABASE_URL | https://qrjggvkgwrjjfatbscat.supabase.co |
-| SUPABASE_ANON_KEY | sb_publishable_dSTFxRLrlBOj8R_GCPLeNw_BT0MViZG |
+### segundo cérebro (BASE de memórias)
+- **Repo:** https://github.com/arthurmi681/omnimind-brain
+- **Onde:** `/mnt/hdd/zaki/second-brain/` + `/mnt/hdd/zaki/omni-claim/`
+- **O que tem:** decisões, skills, knowledge, memórias
 
----
-
-## 📱 PRÓXIMOS PASSOS
-
-### Conexão com App Android
-O app Android pode usar a API:
-
-```
-BASE_URL: https://second-brain-cloud.vercel.app
-ENDPOINT: /api/memories
-```
-
-### UsarBlackbox AI como IA
-Para usar eu (Blackbox AI) como IA do app:
-1. O app envia a mensagem para mim via API
-2. Eu uso o segundo cérebro como contexto
-3. Respond com base na memória
+### second-brain-cloud (PARA APP MOBILE)
+- **Repo:** https://github.com/arthurmi681/second-brain-cloud
+- **URL:** https://second-brain-cloud.vercel.app
+- **Supabase:** qrjggvkgwrjjfatbscat
+- **O que tem:** API REST para Android
 
 ---
 
-## 📋 ARQUIVOS DO PROJETO
+## 🔄 FLUXO DE SESSÃO
 
+### INÍCIO
+```bash
+git clone https://github.com/arthurmi681/omnimind-brain.git /mnt/hdd/zaki
 ```
-second-brain-cloud/
-├── api/
-│   ├── memories.js      # API de memórias
-│   └── test.js        # Teste de saúde
-├── lib/
-│   ├── embeddings.js  # Funções Supabase
-│   ├── groq.js       # Cliente Groq (não usado)
-│   ├── prompts.js    # Prompts do sistema
-│   └── supabase.js   # Cliente Supabase
-├── supabase/
-│   └── config.toml   # Config Supabase CLI
-├── .env.example     # Template variáveis
-├── .env.local      # Variáveis locais
-├── package.json    # Dependências Node
-├── vercel.json     # Config Vercel
-└── README.md      # Documentação
+
+### DURANTE
+- Trabalhar em `/mnt/hdd/zaki/`
+- Memórias → segundo cérebro (local)
+- Código → GitHub
+
+### FIM
+```bash
+cd /mnt/hdd/zaki
+git add . && git push
 ```
 
 ---
 
-## ⚠️ PENDÊNCIAS
+## 📋 REGRA PERMANENTE
 
-1. **GROQ_API_KEY** — Não configurada (opcional)
-2. **HUGGINGFACE_TOKEN** — Não configurada (opcional)
-3. **Conexão App Android** — Pendente
+> **segundo cérebro (GitHub) = BASE de memórias**
+> **second-brain-cloud (Vercel) = só API para app mobile**
+> **Local = cache temporário**
 
 ---
 
-## ✅ CHECKLIST FINAL
+## ✅ CHECKLIST
 
-- [x] GitHub repo criado
-- [x] Supabase schema executado
-- [x] Supabase linkado (CLI)
-- [x] Vercel deploy feito
+- [x] GitHub second-brain-cloud
+- [x] Supabase configurado
+- [x] Vercel deploy
 - [x] API funcionando
-- [x] Memória salva no cloud
+- [x] Memória salva
 
 ---
 
