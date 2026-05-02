@@ -1,13 +1,6 @@
 {
   "framework": null,
   "buildCommand": null,
-  "outputDirectory": "api",
   "installCommand": "npm install",
-  "devCommand": "vercel dev",
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
-    }
-  ]
+  "devCommand": "vercel dev"
 }
