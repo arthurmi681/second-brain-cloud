@@ -1,0 +1,22 @@
+{
+  "name": "second-brain-cloud",
+  "version": "1.0.0",
+  "description": "OmniMind Second Brain - Cloud Native (Supabase + Vercel + OpenAI)",
+  "main": "api/memories/route.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "start": "vercel start",
+    "build": "vercel build",
+    "deploy": "vercel --prod"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "openai": "^4.28.0"
+  },
+  "devDependencies": {
+    "vercel": "^33.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
