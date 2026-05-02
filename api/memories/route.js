@@ -3,19 +3,18 @@
  * 
  * Fluxo:
  * 1. Recebe mensagem do usuário
- * 2. Cria embedding da mensagem
- * 3. Busca memórias similares no banco
- * 4. Envia para Groq com contexto
- * 5. Salva nova memória se importante
+ * 2. Salva no Supabase
+ * 3. Retorna as memórias salvas
+ * 
+ * A conversa com IA acontece na CLI (Blackbox)
  */
-import { searchMemories, saveMemoryIfImportant, getChatCompletion } from '../../lib/embeddings';
-import { MEMORY_SYSTEM_PROMPT } from '../../lib/prompts';
+import { saveMemory } from '../../lib/embeddings';
 
 export const dynamic = 'force-dynamic';
 
 export async function POST(request) {
   try {
-    const { message, sessionId, saveMemory = true } = await request.json();
+    const { message, category = 'general' } = await request.json();
     
     if (!message) {
       return Response.json(
@@ -24,31 +23,13 @@ export async function POST(request) {
       );
     }
     
-    // 1. Buscar memórias similares
-    const memories = await searchMemories(message, 5);
-    
-    // 2. Preparar prompt com contexto
-    const systemPrompt = MEMORY_SYSTEM_PROMPT(memories);
-    
-    // 3. Chamar Groq (Llama)
-    const response = await getChatCompletion([
-      { role: 'system', content: systemPrompt },
-      { role: 'user', content: message }
-    ]);
-    
-    // 4. Salvar nova memória (se_ENABLED e for importante)
-    if (saveMemory && message.length > 20) {
-      await saveMemoryIfImportant(message);
-    }
+    // Salvar memória no Supabase
+    const saved = await saveMemory(message, category);
     
     return Response.json({
-      response,
-      memories: memories.map(m => ({
-        id: m.id,
-        content: m.content,
-        category: m.category,
-        similarity: m.similarity
-      }))
+      success: true,
+      id: saved.id,
+      message: 'Memória salva!'
     });
     
   } catch (error) {
@@ -61,7 +42,7 @@ export async function POST(request) {
 }
 
 /**
- * GET: Retorna todas as memórias (para debug)
+ * GET: Retorna todas as memórias
  */
 export async function GET() {
   try {
