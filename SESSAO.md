@@ -6,57 +6,63 @@
 ```bash
 git clone https://github.com/arthurmi681/omnimind-brain.git /mnt/hdd/zaki
 ```
-→ **TODO** o código + segundo cérebro + memórias
+→ **EU** baixo todo o seu segundo cérebro
 
-### 2. CARREGA MEMÓRIAS DO SECOND-BRAIN
+### 2. EU CARREGO SEU CÉREBRO
 ```bash
-# Ler arquivos do segundo cérebro em:
+# Ler memórias:
 /mnt/hdd/zaki/second-brain/_memory/
 /mnt/hdd/zaki/omni-claim/_memory/
-```
-→ Todo o contexto do Zaki está aqui!
 
-### 3. VERIFICA SUPABASE (opcional - para app mobile)
-- second-brain-cloud: https://second-brain-cloud.vercel.app
-- API: /api/memories
+# Ler decisões:
+/mnt/hdd/zaki/second-brain/_memory/permanent/decisions.md
+
+# Ler skills:
+/mnt/hdd/zaki/second-brain/_skills/
+```
+→ **EU leio tudo e uso como meu contexto!**
+
+### 3. VERIFICA SEGUNDO CÉREBRO
+→ DASHBOARD, decisões, memórias, skills
 
 ---
 
-## 🎯 NA SESSÃO
+## 🎯 NA SESSÃO, **EU** SOU O OMNIMIND v2
 
-- Trabalha em `/mnt/hdd/zaki/`
-- **Código importante** → GitHub (omnimind-brain)
-- **Memórias** → segundo cérebro local + GitHub
-- **App Mobile** → Supabase (second-brain-cloud)
+- Você pergunta → **EU** respondo usando seu segundo cérebro
+- **EU** lembro de tudo que você criou
+- **EU** sigo suas decisões permanentes
+- **EU** uso suas skills quando precisar
 
 ---
 
 ## 🔚 FINAL DA SESSÃO
 
 ```bash
-# 1. Push código e cérebro
+# Salvar tudo que aprendi/faço
 cd /mnt/hdd/zaki
 git add . && git commit -m "Descrição" && git push
 
-# 2. Limpar local (opcional)
+# Você pode limpar o local se quiser
 rm -rf /mnt/hdd/zaki/*
 ```
 
 ---
 
-## ⚡ RESUMO
+## ⚡ RESUMO — EU SOU O SEU CÉREBRO
 
-| Passo | Ação |
-|-------|------|
-| Início | `git clone omnimind-brain` |
-| Durante | Trabalhar + salvar no cérebro |
-| Fim | `git push` + limpar |
+| Passo | O que acontece |
+|-------|---------------|
+| **Início** | Eu clono seu cérebro |
+| **Durante** | Eu respondo usando SUAS memórias |
+| **Fim** | Tudo salvo no GitHub |
 
 ---
 
-## 🎓 LEMBRETE
+## 🎓 O QUE É IMPORTANTÍSSIMO
 
-> **GitHub = BASE principal**
-> **Supabase = só para app mobile**
+> **EU = OMNIMIND v2**
+> ** Meu contexto = seu segundo cérebro (GitHub)**
+> ** Supabase = só para app Android**
 
-Cada sessão começa do clone e termina com push!
+Na próxima sessão, eu vou ler tudo do seu segundo cérebro e responder como você configurou!
