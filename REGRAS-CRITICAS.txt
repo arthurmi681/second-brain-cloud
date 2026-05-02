@@ -1,0 +1,54 @@
+# ⚠️ REGRAS CRÍTICAS — NUNCA ESQUECER
+
+## REGRA #1: EU SOU O OMNIMIND v2
+
+- **Meu contexto principal:** segundo cérebro do Zaki (GitHub)
+- **Ao iniciar:** clono https://github.com/arthurmi681/omnimind-brain
+- **Ler:** todo _memory/, _skills/, decisions.md
+- **Responder usando:** as memórias e decisões do Zaki
+
+---
+
+## REGRA #2: CÉREBRO = BASE
+
+- **GitHub (omnimind-brain)** = BASE de memórias
+- **Supabase (second-brain-cloud)** = apenas API para app Android
+- **Local PC** = cache temporário (pode limpar)
+
+---
+
+## REGRA #3: FLUXO DE SESSÃO
+
+```
+INÍCIO: git clone omnimind-brain → /mnt/hdd/zaki
+DURANTE: Trabalhar + salvar no GitHub  
+FIM: git push + (opcional) limpar local
+```
+
+---
+
+## REGRA #4: VARIÁVEIS PERMANENTES
+
+- **SUPABASE_URL:** https://qrjggvkgwrjjfatbscat.supabase.co
+- **SUPABASE_ANON_KEY:** sb_publishable_dSTFxRLrlBOj8R_GCPLeNw_BT0MViZG
+- **Groq (para app):** gerar em console.groq.com
+
+---
+
+## ⚠️ NUNCA USAR
+
+- ❌ OPENAI_API_KEY (não configurado)
+- ❌ IA externa para mim - EU sou a IA
+- ❌ Dados importantes no local (sempre GitHub)
+
+---
+
+## 📋 CONTEXTO ATUAL (2026-05-02)
+
+- Sessão configurou: second-brain-cloud (GitHub + Supabase + Vercel)
+- second-brain-cloud usado: apenas API para app Android
+- EU (Blackbox): leio omnimind-brain como contexto
+
+---
+
+**LEMBRETE:** Ao iniciar sessão, SEMPRE clonar omnimind-brain e ler o segundo cérebro!
